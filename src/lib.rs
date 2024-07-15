@@ -33,8 +33,8 @@ impl Plugin for GamePlugin {
         app.init_resource::<Score>()
             .init_resource::<GameState>()
             .insert_resource(SpawnTimer {
-                obstacle: Timer::from_seconds(2.0, TimerMode::Repeating),
-                poop: Timer::from_seconds(3.0, TimerMode::Repeating),
+                obstacle: Timer::from_seconds(0.0, TimerMode::Repeating),
+                poop: Timer::from_seconds(0.0, TimerMode::Repeating),
             })
             .add_systems(Startup, setup::setup)
             .add_systems(
