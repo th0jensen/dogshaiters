@@ -1,18 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Game Title</title>
-    <style>
-        body { margin: 0; }
-        canvas { display: block; }
-    </style>
-</head>
-<body>
-    <script type="module">
-        import init from './out/dogshaiters.js';
-        init();
-    </script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dogshaiters</title>
+        <style>
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="module">
+            import init, { start_game } from './out/dogshaiters.js'
+            await init()
+            start_game()
+
+            window.onresize = function () {
+                canvas.style.width = '100%'
+                canvas.height = canvas.width * 0.75
+            }
+        </script>
+        <div
+            style="
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                place-items: center;
+            "
+        >
+            <canvas id="canvas" style="width: 100px; height: 100vh"></canvas>
+        </div>
+    </body>
 </html>
